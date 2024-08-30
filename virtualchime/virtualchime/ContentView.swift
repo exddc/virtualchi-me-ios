@@ -1,21 +1,46 @@
-//
-//  ContentView.swift
-//  virtualchime
-//
-//  Created by Timo Weiß on 26.08.24.
-//
-
 import SwiftUI
+import CocoaMQTT
 
 struct ContentView: View {
+    @ObservedObject var appState = MQTTManager.shared().currentAppState
+    @State private var showingSettings = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                // Display connection status
+                HStack {
+                    Image(systemName: appState.appConnectionState.isConnected ? "checkmark.circle.fill" : "xmark.circle.fill")
+                        .foregroundColor(appState.appConnectionState.isConnected ? .green : .red)
+                        .padding()
+                    Text(appState.appConnectionState.description)
+                        .foregroundColor(appState.appConnectionState.isConnected ? .green : .red)
+                }
+
+                // Display MQTT messages history
+                ScrollView {
+                    Text(appState.historyText)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(5)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding()
+            }
+            .padding()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) { // Ensure correct placement
+                    Button(action: {
+                        showingSettings = true
+                    }) {
+                        Image(systemName: "gearshape")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingSettings) {
+                SettingsView()
+            }
         }
-        .padding()
     }
 }
 

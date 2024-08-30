@@ -11,6 +11,12 @@
 		CC08044F2C7CBA9100CA920E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC08044E2C7CBA9100CA920E /* ContentView.swift */; };
 		CC0804512C7CBA9200CA920E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0804502C7CBA9200CA920E /* Assets.xcassets */; };
 		CC0804542C7CBA9200CA920E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC0804532C7CBA9200CA920E /* Preview Assets.xcassets */; };
+		CC08045C2C7E091700CA920E /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = CC08045B2C7E091700CA920E /* CocoaMQTT */; };
+		CC08045E2C7E091700CA920E /* CocoaMQTTWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = CC08045D2C7E091700CA920E /* CocoaMQTTWebSocket */; };
+		CC0804612C7F4B6B00CA920E /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = CC0804602C7F4B6B00CA920E /* Starscream */; };
+		CC0804652C81C00400CA920E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0804642C81C00400CA920E /* SettingsView.swift */; };
+		CC0804672C81C02B00CA920E /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0804662C81C02B00CA920E /* MQTTManager.swift */; };
+		CC0804692C81DBA600CA920E /* MQTTAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0804682C81DBA600CA920E /* MQTTAppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,9 @@
 		CC08044E2C7CBA9100CA920E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CC0804502C7CBA9200CA920E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC0804532C7CBA9200CA920E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CC0804642C81C00400CA920E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CC0804662C81C02B00CA920E /* MQTTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
+		CC0804682C81DBA600CA920E /* MQTTAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTAppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC08045E2C7E091700CA920E /* CocoaMQTTWebSocket in Frameworks */,
+				CC08045C2C7E091700CA920E /* CocoaMQTT in Frameworks */,
+				CC0804612C7F4B6B00CA920E /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				CC08044C2C7CBA9100CA920E /* virtualchimeApp.swift */,
+				CC0804642C81C00400CA920E /* SettingsView.swift */,
+				CC0804662C81C02B00CA920E /* MQTTManager.swift */,
+				CC0804682C81DBA600CA920E /* MQTTAppState.swift */,
 				CC08044E2C7CBA9100CA920E /* ContentView.swift */,
 				CC0804502C7CBA9200CA920E /* Assets.xcassets */,
 				CC0804522C7CBA9200CA920E /* Preview Content */,
@@ -83,6 +98,11 @@
 			dependencies = (
 			);
 			name = virtualchime;
+			packageProductDependencies = (
+				CC08045B2C7E091700CA920E /* CocoaMQTT */,
+				CC08045D2C7E091700CA920E /* CocoaMQTTWebSocket */,
+				CC0804602C7F4B6B00CA920E /* Starscream */,
+			);
 			productName = virtualchime;
 			productReference = CC0804492C7CBA9100CA920E /* virtualchime.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +131,10 @@
 				Base,
 			);
 			mainGroup = CC0804402C7CBA9100CA920E;
+			packageReferences = (
+				CC08045A2C7E091700CA920E /* XCRemoteSwiftPackageReference "CocoaMQTT" */,
+				CC08045F2C7F4B6B00CA920E /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = CC08044A2C7CBA9100CA920E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +161,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC0804652C81C00400CA920E /* SettingsView.swift in Sources */,
+				CC0804692C81DBA600CA920E /* MQTTAppState.swift in Sources */,
+				CC0804672C81C02B00CA920E /* MQTTManager.swift in Sources */,
 				CC08044F2C7CBA9100CA920E /* ContentView.swift in Sources */,
 				CC08044D2C7CBA9100CA920E /* virtualchimeApp.swift in Sources */,
 			);
@@ -344,6 +371,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC08045A2C7E091700CA920E /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/emqx/CocoaMQTT.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.8;
+			};
+		};
+		CC08045F2C7F4B6B00CA920E /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC08045B2C7E091700CA920E /* CocoaMQTT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC08045A2C7E091700CA920E /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			productName = CocoaMQTT;
+		};
+		CC08045D2C7E091700CA920E /* CocoaMQTTWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC08045A2C7E091700CA920E /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			productName = CocoaMQTTWebSocket;
+		};
+		CC0804602C7F4B6B00CA920E /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC08045F2C7F4B6B00CA920E /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC0804412C7CBA9100CA920E /* Project object */;
 }
